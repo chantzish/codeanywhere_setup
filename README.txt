@@ -7,6 +7,7 @@ puttygen ../.ssh/id_rsa -o id_rsa.ppk
 # refresh the file explorer and download the keys
 
 # heroku setup
+sudo apt-get install apt-transport-https
 sudo apt-get install software-properties-common
 sudo add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
 curl -L https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
