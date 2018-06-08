@@ -29,3 +29,10 @@ sudo apt-get install nodejs
 
 # clean cache
 sudo apt-get clean
+
+# open shift install
+wget https://mirror.openshift.com/pub/openshift-v3/clients/3.9.14/linux/oc.tar.gz
+tar -xzvf oc.tar.gz
+rm tar.gz
+sudo mv oc /usr/bin/
+
