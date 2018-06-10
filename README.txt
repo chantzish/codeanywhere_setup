@@ -1,10 +1,15 @@
 # codeanywhere_setup
+# username cabox
 
 # ssh keys setup
 sudo apt-get update
 sudo apt-get install putty-tools
 puttygen ../.ssh/id_rsa -o id_rsa.ppk
+cp ../.ssh/id_rsa .
 # refresh the file explorer and download the keys
+# for putty use ppk for "auth -private key file for authentication"
+# and save signature in "host keys"
+# for linux ssh use: ssh -p 15941 cabox@host13.codeanyhost.com -i id_rsa -X
 
 # heroku setup
 sudo apt-get install apt-transport-https
@@ -36,3 +41,19 @@ tar -xzvf oc.tar.gz
 rm tar.gz
 sudo mv oc /usr/bin/
 
+# enable x11
+sudo vim /etc/ssh/sshd_config
+# add line X11UseLocalhost no
+sudo apt-get install xauth
+# restart
+sudo apt-get install x11-apps
+# install xming with fonts
+# check
+xeyes
+
+# MongoDb Compass install
+wget https://downloads.mongodb.com/compass/mongodb-compass_1.13.1_amd64.deb
+sudo apt-get install libsecret-1-0 libgconf-2-4 libgtk2.0-0 libxtst6 libx11-xcb1 libxss1 libnss3 libasound2
+sudo dpkg -i mongodb-compass_1.13.1_amd64.deb
+# run
+DEBUG=* mongodb-compass;
