@@ -53,7 +53,7 @@ xeyes
 
 # MongoDb Compass install
 wget https://downloads.mongodb.com/compass/mongodb-compass_1.13.1_amd64.deb
-sudo apt-get install libsecret-1-0 libgconf-2-4 libgtk2.0-0 libxtst6 libx11-xcb1 libxss1 libnss3 libasound2
+sudo apt-get install libsecret-1-0 libgconf-2-4 libgtk2.0-0 libxtst6 libx11-xcb1 libxss1 libnss3 libasound2 dbus
 sudo dpkg -i mongodb-compass_1.13.1_amd64.deb
 # run
 DEBUG=* mongodb-compass;
