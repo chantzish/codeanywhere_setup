@@ -21,6 +21,8 @@ sudo cp libfreetype.so.6.12.1 /opt/teamviewer/tv_bin/wine/lib/
 sudo cp libfreetype.so.6 /opt/teamviewer/tv_bin/wine/lib/
 # unity and lightdm (display manager) preferred
 # change ubuntu 18.04 to unity:
+# (note: it's actually possible and simpler to use lightdm even with gnome by: sudo dpkg --configure lightdm
+# but the rest is for staying with gdm3)
 sudo apt install ubuntu-unity-desktop
 # and choose lightdm for display manager
 ## to work with gnome in ubuntu 18.04:
