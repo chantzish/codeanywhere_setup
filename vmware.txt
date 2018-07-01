@@ -1,0 +1,58 @@
+# open-vm-tools
+sudo apt install open-vm-tools
+# add /mnt/hgfs to favorites
+# for now need to disable and enable sharing in vm setting to work
+
+# team viewer
+# may need to enable multiarch-support
+# and sudo dpkg --add-architecture i386
+# and sudo apt update
+# for ubuntu <=16.04 just
+sudo apt install gdebi
+sudo gdebi teamviewer.deb
+## for ubuntu 18.04
+# if can't find libpng12-0 download:
+https://packages.ubuntu.com/xenial/i386/libpng12-0/download
+sudo gdebi libpng12-0_1.2.54-1ubuntu1_i386.deb
+# download libfreetype6_2.6.1-0.1ubuntu2.3_i386.deb here:
+https://packages.ubuntu.com/xenial/i386/libfreetype6/download
+# extract libfreetype.so.6 and libfreetype.so.6.12.1 to /opt/teamviewer/tv_bin/wine/lib
+sudo cp libfreetype.so.6.12.1 /opt/teamviewer/tv_bin/wine/lib/
+sudo cp libfreetype.so.6 /opt/teamviewer/tv_bin/wine/lib/
+# unity and lightdm (display manager) preferred
+# change ubuntu 18.04 to unity:
+sudo apt install ubuntu-unity-desktop
+# and choose lightdm for display manager
+## to work with gnome in ubuntu 18.04:
+sudo apt install gnome-shell-extensions
+sudo apt install chrome-gnome-shell
+# now in firefox add gnome-shel-integration
+https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/
+# and add and enable the extension:
+https://extensions.gnome.org/extension/1031/topicons/
+# optional install tweaks
+sudo apt install gnome-tweak-tool
+# can configure the icon to the right
+## to work with gnome in ubuntu 16.04:
+# ensure WaylandEnable=false uncommented in /etc/gdm3/custom.conf
+# add refreshing teamviewer to NOPASSWD sudoers
+# and refresh teamviewer when login and when logout
+sudo visudo
+# add line at bottom above #includedir:
+user ALL=(ALL:ALL) NOPASSWD:/usr/bin/teamviewer daemon restart
+# add teamviewer daemon restart in /etc/gdm3/PostSession/Default:
+sudo vi /etc/gdm3/PostSession/Default 
+# add in gnome-session-properties
+sudo /usr/bin/teamviewer daemon restart
+
+# disable piix4
+vi /etc/modprobe.d/blacklist.conf
+# add: blacklist i2c-piix4
+
+# change resolution comletely
+echo FRAMEBUFFER=y | sudo tee /etc/initramfs-tools/conf.d/splash
+sudo vi /etc/default/grub
+# uncomment GRUB_GFXMODE
+# and insert GRUB_GFXMODE=1024x768
+sudo update-initramfs -u
+sudo update-grub
