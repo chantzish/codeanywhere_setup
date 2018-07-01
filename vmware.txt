@@ -33,6 +33,7 @@ https://extensions.gnome.org/extension/1031/topicons/
 # optional install tweaks
 sudo apt install gnome-tweak-tool
 # can configure the icon to the right
+# now follow the instructions for ubuntu 16.04
 ## to work with gnome in ubuntu 16.04:
 # ensure WaylandEnable=false uncommented in /etc/gdm3/custom.conf
 # add refreshing teamviewer to NOPASSWD sudoers
