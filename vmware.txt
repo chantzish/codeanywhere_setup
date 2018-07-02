@@ -21,8 +21,6 @@ sudo cp libfreetype.so.6.12.1 /opt/teamviewer/tv_bin/wine/lib/
 sudo cp libfreetype.so.6 /opt/teamviewer/tv_bin/wine/lib/
 # unity and lightdm (display manager) preferred
 # change ubuntu 18.04 to unity:
-# (note: it's actually possible and simpler to use lightdm even with gnome by: sudo dpkg --configure lightdm
-# but the rest is for staying with gdm3)
 sudo apt install ubuntu-unity-desktop
 # and choose lightdm for display manager
 ## to work with gnome in ubuntu 18.04:
@@ -37,6 +35,8 @@ sudo apt install gnome-tweak-tool
 # can configure the icon to the right
 # now follow the instructions for ubuntu 16.04
 ## to work with gnome in ubuntu 16.04:
+# (note: it's actually possible and simpler to use lightdm even with gnome by: sudo dpkg-reconfigure lightdm
+# but the rest is for staying with gdm3)
 # ensure WaylandEnable=false uncommented in /etc/gdm3/custom.conf
 # add refreshing teamviewer to NOPASSWD sudoers
 # and refresh teamviewer when login and when logout
