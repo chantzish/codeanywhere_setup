@@ -47,6 +47,8 @@ user ALL=(ALL:ALL) NOPASSWD:/usr/bin/teamviewer daemon restart
 sudo vi /etc/gdm3/PostSession/Default 
 # add in gnome-session-properties
 sudo /usr/bin/teamviewer daemon restart
+# another option is to copy refreshtv.desktop to ~/.config/autostart
+cp refreshtv.desktop ~/.config/autostart/
 
 # disable piix4
 vi /etc/modprobe.d/blacklist.conf
