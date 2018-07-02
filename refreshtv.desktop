@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=sudo /usr/bin/teamviewer daemon restart
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_IL]=sudo /usr/bin/teamviewer daemon restart
+Name=sudo /usr/bin/teamviewer daemon restart
+Comment[en_IL]=
+Comment=
