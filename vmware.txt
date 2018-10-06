@@ -1,5 +1,5 @@
 # open-vm-tools
-sudo apt install open-vm-tools
+sudo apt install open-vm-tools open-vm-tools-desktop
 # add /mnt/hgfs to favorites
 # for now need to disable and enable sharing in vm setting to work
 
